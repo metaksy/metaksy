@@ -20,14 +20,14 @@
   color: white;
 }
 
-.posts {
+.post-list {
   width: fit-content;
   margin: 40px auto;
   list-style-type: none;
   padding: 0;
 }
 .posts li a {
-  display: flex;
+  display: block;
   color: black;
   padding: 8px 16px;
   text-decoration: none;
