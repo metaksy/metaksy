@@ -7,66 +7,112 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
+    /* Navbar geral */
     #menu {
       background-color: #222;
-      padding: 1rem;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
+      padding: 0.5rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
+
+    /* Logo / marca */
+    #menu .brand {
+      color: white;
+      font-weight: 300;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+
+    /* Menu principal */
     #menu .main-menu {
       list-style: none;
       padding: 0;
       margin: 0;
       display: flex;
-      gap: 1rem;
+      gap: 2rem;
     }
+
     #menu .main-menu li a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 300;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
     }
+
     #menu .main-menu li a:hover {
+      text-decoration: underline;
       color: #ddd;
     }
 
+    /* Mobile toggle */
     #toggle-menu {
       display: none;
+      font-weight: bold;
       color: white;
       cursor: pointer;
-      font-weight: bold;
     }
+
     @media (max-width: 768px) {
+      #menu {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.5rem 1rem;
+      }
+
       #menu .main-menu {
         display: none;
         flex-direction: column;
         gap: 0;
+        width: 100%;
+        margin-top: 0.5rem;
       }
+
       #menu input:checked + .main-menu {
         display: flex;
       }
+
       #toggle-menu {
         display: block;
       }
+    }
+
+    /* Corpo da página: para empurrar conteúdo abaixo da navbar fixa */
+    body {
+      margin: 0;
+      padding-top: 60px; /* altura da navbar fixa */
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
     }
   </style>
 </head>
 <body>
   <nav id="menu">
-    <label for="tm" id="toggle-menu">
-      <b>NAVIGATION</b> <span class="drop-icon">▾</span>
-    </label>
+    <a href="index.html" class="brand">μεταξύ</a>
+
+    <label for="tm" id="toggle-menu">NAVIGATION ▾</label>
     <input type="checkbox" id="tm">
 
     <ul class="main-menu">
-      <li><a href="index.html" title="Home">HOME</a></li>
-      <li><a href="posts.html" title="Posts">POSTS</a></li>
+      <li><a href="index.html" title="Home">Home</a></li>
+      <li><a href="posts.html" title="Posts">Posts</a></li>
     </ul>
   </nav>
 
   <header>
+    <h1 style="text-align:center; margin-top:2rem;">μεταξύ</h1>
   </header>
-
-  <h1>μεταξύ</h1>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
