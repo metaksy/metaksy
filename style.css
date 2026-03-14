@@ -25,10 +25,13 @@
   margin: 40px auto;
   list-style-type: none;
   padding: 0;
+  background-color: #f1f1f1;
+  border: 1px solid #555555;
 }
 .posts-list li a {
   display: block;
   color: black;
   padding: 8px 16px;
   text-decoration: none;
+  border-bottom: 1px solid #555555;
 }
