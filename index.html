@@ -2,32 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>μεταξύ</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    #menu {
+      background-color: #222;
+      padding: 1rem;
+      font-family: Arial, sans-serif;
+    }
+    #menu .main-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 1rem;
+    }
+    #menu .main-menu li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #menu .main-menu li a:hover {
+      color: #ddd;
+    }
+
+    #toggle-menu {
+      display: none;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      #menu .main-menu {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+      }
+      #menu input:checked + .main-menu {
+        display: flex;
+      }
+      #toggle-menu {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg" style="background-color:#222; padding:1rem;">
-  <div class="container-fluid">
-    <a class="navbar-brand text-white" href="#">μεταξύ</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link text-white active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">Sobre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contato</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <nav id="menu">
+    <label for="tm" id="toggle-menu">
+      <b>NAVIGATION</b> <span class="drop-icon">▾</span>
+    </label>
+    <input type="checkbox" id="tm">
+
+    <ul class="main-menu">
+      <li><a href="index.html" title="Home">HOME</a></li>
+      <li><a href="posts.html" title="Posts">POSTS</a></li>
+    </ul>
+  </nav>
+
   <header>
   </header>
+
+  <h1>μεταξύ</h1>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
